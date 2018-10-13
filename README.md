@@ -1,5 +1,5 @@
 # Numba example
-Python program performing intensive numerical work and using JIT optimizations with Numba
+Python programs performing intensive numerical work and using JIT optimizations with Numba
 
 	virtualenv -p python3 venv
 	source venv/bin/activate
