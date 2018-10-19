@@ -15,8 +15,6 @@ def softmax_optimized(z):
     s = num / esum(z)
     return s
 
-
-@jit("f8[:](f8[:])", cache=False, nopython=True, nogil=True, parallel=True)
 def softmax_python(z):
     s = []
 
