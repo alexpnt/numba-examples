@@ -2,6 +2,15 @@ import time
 import math
 import numpy as np
 from numba import jit
+import os
+
+# os.environ["NUMBA_DUMP_CFG"] = "1"
+# os.environ["NUMBA_DUMP_IR"] = "1"
+# os.environ["NUMBA_DUMP_ANNOTATION"] = "1"
+# os.environ["NUMBA_DEBUG_ARRAY_OPT_STATS"] = "1"
+# os.environ["NUMBA_DUMP_LLVM"] = "1"
+# os.environ["NUMBA_DUMP_OPTIMIZED"] = "1"
+# os.environ["NUMBA_DUMP_ASSEMBLY"] = "1"
 
 
 @jit("f8(f8[:])", cache=False, nopython=True, nogil=True, parallel=True)
@@ -14,6 +23,7 @@ def softmax_optimized(z):
     num = np.exp(z)
     s = num / esum(z)
     return s
+
 
 def softmax_python(z):
     s = []
